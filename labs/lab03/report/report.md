@@ -1,106 +1,94 @@
-#РОССИЙСКИЙ УНИВЕРСИТЕТ ДРУЖБЫ НАРОДОВ#
-<br />
-##Факультет физико-математических и естественных наук##
-##Кафедра прикладной информатики и теории вероятностей##
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-##ОТЧЁТ##
-##ПО ЛАБОРАТОРНОЙ РАБОТЕ №2##
-<br />
-###дисциплина: Операционные системы###
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-<br />
-####Студент: Паращенко Антонина####
-####Группа: НПМбд-02-21####
-<br />
-<br />
-<br />
-<br />
-####Москва####
-####2022 г.####
-<br />
-###Цель работы: изучить идеологию и применение средств контроля версий и освоить умения по работе с git.###
-<br />
-###Ход лабораторной работы:###
-<br />
-- Настройка github
-<br />
-![photo](image/1.png)
-######Рис. Аккаунт на github######
-<br />
-- Задаём основную информацию владельца репозитория
-<br />
-![photo](image/2.png)
-![photo](image/3.png)
-######Рис. Базовая настройка git######
-<br />
-- Создание ключа ssh
-<br />
-![photo](image/4.png)
-######Рис. Генерация и подключение ключа SSH######
-<br />
-- Создание ключа gpg
+---
+# Front matter
+lang: ru-RU
+title: "Лабораторная работа №3"
+subtitle: "Дисциплина: Операционные системы"
+author: "Паращенко Антонина Дмитриевна"
 
-![photo](image/5.png)
-![photo](image/6.png)
-![photo](image/7.png)
-######Рис. Гнерация и подключение ключа GPG######
-<br />
-- Переносим репозиторий из шаблона
-<br />
-![photo](image/8.png)
-![photo](image/9.png)
-######Рис. Создание репозитория курса на основе шаблона######
-<br />
-- Настройка каталога курса
-<br />
-![photo](image/10.png)
-![photo](image/11.png)
-######Рис. Отправка файлов на сервер######
-<br />
-<br />
-####Вывод: изучила идеологию и применение средств контроля версий, а также освоила команды по работе с git.
-<br />
-<br />
-####Контрольные вопросы:####
-<br />
-<br />
-1. Системы контроля версий (Version Control System, VCS) применяются при работе нескольких человек над одним проектом. . При внесении изменений в содержание проекта система контроля версий позволяет их фиксировать, совмещать изменения, произведённые разными участниками проекта, производить откат к любой более ранней версии проекта, если это требуется.<br />
-2. -<br />
-3. Централизованная система (CVS, Subversion) предполагает наличие единого репозитория для хранения файлов, однако для децентрализированных систем (Git, Bazaar, Mercurial) это необязательно.<br />
-4. Предворительная конфигурация, настроить utf-8, инициализауия локального репозитория.<br />
-5. Работа пользователя со своей веткой начинается с проверки и получения изменений из центрального репозитория, затем можно вносить изменения в локальном дереве и/или ветке.<br />
-6. Благодаря тому, что Git является распределённой системой контроля версий, резервную копию локального хранилища можно сделать простым копированием или архивацией.<br />
-7. Система контроля версий Git представляет собой набор программ командной строки. Доступ к ним можно получить из терминала посредством ввода команды git с различными опциями.<br />
-8. Участник проекта (пользователь) перед началом работы посредством определённых команд получает нужную ему версию файлов. После внесения изменений, пользователь размещает новую версию в хранилище. При этом предыдущие версии не удаляются из центрального хранилища и к ним можно вернуться в любой момент. Сервер может сохранять не полную версию изменённых файлов, а производить так называемую дельтакомпрессию — сохранять только изменения между последовательными версиями, что позволяет уменьшить объём хранимых данных.<br />
-9. Под каждую новую функцию должна быть отведена собственная ветка, которую можно отправлять в центральный репозиторий для создания резервной копии или совместной работы команды.<br />
+# Formatting
+toc-title: "Содержание"
+toc: true # Table of contents
+toc_depth: 2
+lof: true # List of figures
+lot: true # List of tables
+fontsize: 12pt
+linestretch: 1.5
+papersize: a4paper
+documentclass: scrreprt
+polyglossia-lang: russian
+polyglossia-otherlangs: english
+mainfont: PT Serif
+romanfont: PT Serif
+sansfont: PT Sans
+monofont: PT Mono
+mainfontoptions: Ligatures=TeX
+romanfontoptions: Ligatures=TeX
+sansfontoptions: Ligatures=TeX,Scale=MatchLowercase
+monofontoptions: Scale=MatchLowercase
+indent: true
+pdf-engine: lualatex
+header-includes:
+  - \linepenalty=10 # the penalty added to the badness of each line within a paragraph (no associated penalty node) Increasing the value makes tex try to have fewer lines in the paragraph.
+  - \interlinepenalty=0 # value of the penalty (node) added after each line of a paragraph.
+  - \hyphenpenalty=50 # the penalty for line breaking at an automatically inserted hyphen
+  - \exhyphenpenalty=50 # the penalty for line breaking at an explicit hyphen
+  - \binoppenalty=700 # the penalty for breaking a line at a binary operator
+  - \relpenalty=500 # the penalty for breaking a line at a relation
+  - \clubpenalty=150 # extra penalty for breaking after first line of a paragraph
+  - \widowpenalty=150 # extra penalty for breaking before last line of a paragraph
+  - \displaywidowpenalty=50 # extra penalty for breaking before last line before a display math
+  - \brokenpenalty=100 # extra penalty for page breaking after a hyphenated line
+  - \predisplaypenalty=10000 # penalty for breaking before a display
+  - \postdisplaypenalty=0 # penalty for breaking after a display
+  - \floatingpenalty = 20000 # penalty for splitting an insertion (can only be split footnote in standard LaTeX)
+  - \raggedbottom # or \flushbottom
+  - \usepackage{float} # keep figures where there are in the text
+  - \floatplacement{figure}{H} # keep figures where there are in the text
+---
 
 
+
+# Цель работы
+
+ Научиться оформлять отчёты с помощью легковесного языка разметки Markdown.
+
+# Ход лабораторной работы:
+
+1) Используем шаблон из github
+
+![Оформление основы отчёта](image/12.png){ #fig:001 width=70% }
+
+2) Создаём заголовки
+
+![Заголовки](image/13.png){ #fig:002 width=70% }
+
+3) Прописываем ход выполнения лабораторной работы 
+
+![Ход работы](image/14.png){ #fig:003 width=70% }
+
+4) Вставка изображений в отчёт
+
+![Синтаксис вставки изображений](image/15.png){ #fig:004 width=70% }
+
+5) Оформляем вывод и контрольные вопросы
+
+![Вывод и контрольные вопросы](image/16.png){ #fig:005 width=70% }
+
+6) С помощью makefale и консоли прописываем команды, чтобы сконвертировать файл типа md в типы pdf и docx
+
+![Конвертация](image/17.png){ #fig:006 width=70% }
+
+7) Проверяем файл в pdf и docx форматах
+
+![Формат docx](image/18.png){ #fig:007 width=70% }
+
+![Формат pdf](image/19.png){ #fig:008 width=70% }
+
+# Вывод: 
+
+ Научилась оформлять отчёты с помощью легковесного языка разметки Markdown и в качестве практики оформила отчёт к лабораторной работе №2.
+ 
+ 
+ 
+ 
 
