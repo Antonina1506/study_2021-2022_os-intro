@@ -90,7 +90,7 @@ header-includes:
 
 5) Добавить пост на тему по выбору: язык разметки Markdown. (рис. [-@fig:005])
 
-![Пост git](8.jpg){ #fig:005 width=70% }
+![Пост markdown](8.jpg){ #fig:005 width=70% }
 
 # Выводы
 
