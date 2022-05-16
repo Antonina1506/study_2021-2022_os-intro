@@ -1,7 +1,7 @@
 ---
 ## Front matter
 lang: ru-RU
-title: Отчёт по лабораторной работе №4
+title: Отчёт по первому этапу проекта
 author: |
 	Паращенко Антонина
 institute: |
